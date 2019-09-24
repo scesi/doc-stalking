@@ -1,14 +1,13 @@
 import React from 'react'
 import logo from './logo.svg'
 import './App.css'
-import { ListadoDedocentes, numeroDeMaterias, materiasQueDa } from './Services/Service'
+import { ListadoDedocentes, materiasQueDa } from './Services/Service'
 import axios from 'axios'
 
 const App: React.FC = () => {
     // console.log(axios.get('http://api.cappuchino.scesi.umss.edu.bo/schedule/FCyT/134111'))
-    console.log(ListadoDedocentes())
-    console.log(numeroDeMaterias('BLANCO COCA LETICIA'))
     console.log(materiasQueDa('BLANCO COCA LETICIA'))
+    console.log(ListadoDedocentes())
     return (
         <div className="App">
             <header className="App-header">
