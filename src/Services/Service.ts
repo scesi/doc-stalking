@@ -67,8 +67,8 @@ export async function ListadoDedocentes(): Promise<any> {
     return new Set()
 }
 
-class Profesor {
-    public materias: Array<Materia> = []
+export class Profesor {
+    public materias: Materia[] = []
     public AgregarMateria(materia: Materia) {
         this.materias.push(materia)
     }
@@ -76,7 +76,7 @@ class Profesor {
         return this.materias
     }
 }
-class Materia {
+export class Materia {
     constructor(public materia: string, public horarios: Array<any>) {
         this.materia = materia
         this.horarios = horarios
