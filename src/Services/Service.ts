@@ -46,7 +46,7 @@ export async function materiasQueDa(nameTeacher: String): Promise<Profesor> {
     return new Profesor()
 }
 
-export async function ListadoDedocentes(): Promise<any> {
+export async function ListadoDedocentes(): Promise<Set<string>> {
     try {
         const horario = await axios.get(url)
         const levels = horario.data.levels
