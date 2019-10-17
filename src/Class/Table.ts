@@ -12,6 +12,14 @@ export class Table {
     }
   }
 
+  clear() {
+    this.hoursRow = new Array<Row>()
+    for(let hour in HashSchedule) {
+      let row = new Row(hour)
+      this.hoursRow.push(row)
+    }
+  }
+
   insertElement(scheduleItem: ItemSchedule): void {
     let hour: string = scheduleItem.hour
     let positionHour: number = HashSchedule[hour]
