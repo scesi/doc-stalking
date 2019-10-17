@@ -1,16 +1,23 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Select from 'react-select'
 import { ListadoDedocentes } from '../Services/Service'
 
 const options: any = []
 
-export default class AutoComplete extends React.Component {
+type Props = {
+  changeTeacher: (value: any) => void;
+}
+
+export default class AutoComplete extends Component<Props> {
     state = {
       selectedOption: null
     }
+
     handleChange = (selectedOption: any) => {
       this.setState({ selectedOption }, () => console.log(`Option selected:`, this.state.selectedOption))
+      this.props.changeTeacher(selectedOption)
     }
+    
     async componentWillMount() {
       console.log(options[0])
       const listaDocentes: any = await ListadoDedocentes()
@@ -19,9 +26,9 @@ export default class AutoComplete extends React.Component {
       })
       console.log(options)
     }
+    
     render() {
         const { selectedOption } = this.state
-
         return <Select value={selectedOption} onChange={this.handleChange} options={options} />
     }
 }

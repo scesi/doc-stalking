@@ -5,9 +5,7 @@ import TableView from './Componets/Table'
 import Schedule from './Class/Table'
 import ItemSchedule, { scheduleConverter } from './Class/ItemSchedule'
 import { ListadoDedocentes, materiasQueDa, Materia } from './Services/Service'
-import Button from '@material-ui/core/Button'
 import AutoComplete from './Componets/autoComplete'
-import Complete from './Componets/Complete'
 
 class App extends Component {
     state = {
@@ -53,15 +51,11 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <AutoComplete />
-                <Complete
-                  selectedDoc={(value) => {
+                <AutoComplete
+                  changeTeacher={(value) => {
                     this.insertData(value.value)
                   }}
-                  suggestions={this.state.listaDocentes} />
-                <Button variant="contained" color="primary">
-                    Hola Mundo!
-                </Button>
+                />
                 <TableView schedule={Schedule} />
             </div>
         )
