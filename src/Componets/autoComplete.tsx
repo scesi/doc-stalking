@@ -29,7 +29,7 @@ export default class AutoComplete extends Component<Props> {
     
     render() {
         const { selectedOption } = this.state
-        return <Select value={selectedOption} onChange={this.handleChange} options={options} />
+        return <Select placeholder={'buscar Docente'} value={selectedOption} onChange={this.handleChange} options={options} />
     }
 }
 
